@@ -41,19 +41,56 @@ parts:
     build-snaps:
       - obs-studio/latest/stable
     build-packages:
+      - ccache
+      - nlohmann-json3-dev
       - qt6-base-dev
+      - libasound2-dev
       - libcurl4-openssl-dev
-      - libx11-dev
-      - libxss-dev
-      - libxtst-dev
+      - libleptonica-dev
+      - libopencv-dev
+      - libpaho-mqtt-dev
+      - libpaho-mqttpp-dev
+      - libpipewire-0.3-dev
       - libproc2-dev
       - libsimde-dev
-      - pkg-config
+      - libspa-0.2-dev
+      - libssl-dev
+      - libtesseract-dev
+      - libusb-1.0-0-dev
+      - libx11-dev
+      - libxkbcommon-dev
+      - libxss-dev
+      - libxtst-dev
+    stage-packages:
+      - libasound2t64
+      - libb2-1
+      - liblept5
+      - libopencv-core406t64
+      - libopencv-calib3d406t64
+      - libopencv-dnn406t64
+      - libopencv-features2d406t64
+      - libopencv-flann406t64
+      - libopencv-highgui406t64
+      - libopencv-imgproc406t64
+      - libopencv-ml406t64
+      - libopencv-objdetect406t64
+      - libopencv-video406t64
+      - libopencv-videoio406t64
+      - libpaho-mqttpp3-1
+      - libpipewire-0.3-0t64
+      - libtesseract5
+      - libusb-1.0-0
+    cmake-parameters:
+      - -DCMAKE_BUILD_TYPE=RelWithDebInfo
+      - -DQT_VERSION=6
     build-environment:
       - CMAKE_PREFIX_PATH: /snap/obs-studio/current/usr/
-    override-pull: |
-      snapcraftctl pull
-      git -C ${CRAFT_PART_SRC} submodule update --init --recursive
+    source-submodules:
+      - deps/asio
+      - deps/websocketpp
+      - deps/libremidi
+      - deps/cpp-httplib
+      - deps/jsoncons
     organize:
       usr/local/lib/obs-plugins: ${CRAFT_PROJECT_NAME}/plugins
       usr/local/share/obs/obs-plugins: ${CRAFT_PROJECT_NAME}/data
