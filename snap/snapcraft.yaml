@@ -1,0 +1,59 @@
+name: advanced-scene-switcher-obs-studio
+base: core24
+version: 1.35.1
+summary: Automatically switch OBS Studio scenes based on various conditions
+description: |
+  Advanced Scene Switcher is a plugin for OBS Studio that offers automatic
+  scene switching based on various conditions including application focus,
+  audio volume, time, file content, and much more.
+contact: https://github.com/astrojuanlu/advanced-scene-switcher-obs-studio
+license: GPL-2.0
+website: https://github.com/astrojuanlu/advanced-scene-switcher-obs-studio
+source-code: https://github.com/astrojuanlu/advanced-scene-switcher-obs-studio
+issues: https://github.com/astrojuanlu/advanced-scene-switcher-obs-studio
+
+grade: devel
+confinement: strict
+
+platforms:
+  amd64:
+
+slots:
+  obs-plugins:
+    interface: content
+    source:
+      read:
+        - /${CRAFT_PROJECT_NAME}
+
+parts:
+  prepare-hook:
+    plugin: nil
+    override-build: |
+      mkdir -p ${CRAFT_PART_INSTALL}/snap/hooks/
+      echo -e '#!/bin/bash\nsnapctl set :obs-plugins snapname='"${CRAFT_PROJECT_NAME}" > ${CRAFT_PART_INSTALL}/snap/hooks/prepare-slot-obs-plugins
+
+  scene-switcher:
+    after:
+      - prepare-hook
+    source: https://github.com/WarmUpTill/SceneSwitcher.git
+    source-type: git
+    plugin: cmake
+    build-snaps:
+      - obs-studio/latest/stable
+    build-packages:
+      - qt6-base-dev
+      - libcurl4-openssl-dev
+      - libx11-dev
+      - libxss-dev
+      - libxtst-dev
+      - libproc2-dev
+      - libsimde-dev
+      - pkg-config
+    build-environment:
+      - CMAKE_PREFIX_PATH: /snap/obs-studio/current/usr/
+    override-pull: |
+      snapcraftctl pull
+      git -C ${CRAFT_PART_SRC} submodule update --init --recursive
+    organize:
+      usr/local/lib/obs-plugins: ${CRAFT_PROJECT_NAME}/plugins
+      usr/local/share/obs/obs-plugins: ${CRAFT_PROJECT_NAME}/data
