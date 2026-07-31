@@ -94,3 +94,5 @@ parts:
     organize:
       usr/local/lib/obs-plugins: ${CRAFT_PROJECT_NAME}/plugins
       usr/local/share/obs/obs-plugins: ${CRAFT_PROJECT_NAME}/data
+      usr/lib/x86_64-linux-gnu/libpaho-mqttpp3.so*: ${CRAFT_PROJECT_NAME}/plugins/
+      usr/lib/x86_64-linux-gnu/libpaho-mqtt3as.so*: ${CRAFT_PROJECT_NAME}/plugins/
