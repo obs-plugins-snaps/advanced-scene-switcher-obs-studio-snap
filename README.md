@@ -1,10 +1,17 @@
-# Advanced Scene Switcher Snap for OBS Studio
+# Advanced Scene Switcher (OBS plugin) Snap for OBS Studio
 
-This snap delivers [Advanced Scene Switcher](https://github.com/WarmUpTill/SceneSwitcher) to the [OBS Studio snap](https://snapcraft.io/obs-studio). Advanced Scene Switcher enables automatic scene switching based on application focus, audio volume, time, file content, and many other conditions.
+This snap delivers [advanced-scene-switcher](https://github.com/WarmUpTill/SceneSwitcher.git) to the
+[OBS Studio snap](https://snapcraft.io/obs-studio).
+
+Advanced Scene Switcher is a plugin for OBS Studio that offers automatic
+scene switching based on various conditions including application focus,
+audio volume, time, file content, and much more.
 
 ## Installation
 
 ### Install from the Store
+
+Once the snap is published in the store:
 
 ```shell
 sudo snap install advanced-scene-switcher-obs-studio
@@ -16,4 +23,16 @@ sudo snap install advanced-scene-switcher-obs-studio
 sudo snap connect obs-studio:obs-plugins advanced-scene-switcher-obs-studio:obs-plugins
 ```
 
-Once connected, Advanced Scene Switcher will appear in OBS Studio under **Tools → Advanced Scene Switcher**.
+Once connected, the plugin will be available in OBS Studio after restarting it.
+
+## Building locally
+
+```shell
+snapcraft
+```
+
+The plugin is built against the libobs headers shipped in the
+`obs-studio` snap, so no local OBS build is required.
+
+The snap starts in `devel` grade; flip it to `stable` in
+`snap/snapcraft.yaml` once the packaged plugin is verified to work.
