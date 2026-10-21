@@ -7,6 +7,20 @@ description: |
   Advanced Scene Switcher is a plugin for OBS Studio that offers automatic
   scene switching based on various conditions including application focus,
   audio volume, time, file content, and much more.
+
+  **Installation**
+
+  Install the snap:
+
+      sudo snap install advanced-scene-switcher-obs-studio
+
+  Then connect it to the OBS Studio snap:
+
+      sudo snap connect obs-studio:obs-plugins advanced-scene-switcher-obs-studio:obs-plugins
+
+  Once connected, the plugin will be available in OBS Studio after restarting
+  it.
+
 website: https://github.com/WarmUpTill/SceneSwitcher
 source-code: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio-snap
 contact: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio-snap
