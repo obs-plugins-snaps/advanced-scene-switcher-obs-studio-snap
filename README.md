@@ -1,6 +1,6 @@
 # Advanced Scene Switcher (OBS plugin) Snap for OBS Studio
 
-This snap delivers [advanced-scene-switcher](https://github.com/WarmUpTill/SceneSwitcher.git) to the
+This snap delivers [advanced-scene-switcher](https://github.com/WarmUpTill/SceneSwitcher) to the
 [OBS Studio snap](https://snapcraft.io/obs-studio).
 
 Advanced Scene Switcher is a plugin for OBS Studio that offers automatic
@@ -25,7 +25,7 @@ sudo snap connect obs-studio:obs-plugins advanced-scene-switcher-obs-studio:obs-
 
 Once connected, the plugin will be available in OBS Studio after restarting it.
 
-## Building locally
+## Development
 
 ```shell
 snapcraft
