@@ -52,6 +52,7 @@ parts:
       - prepare-hook
     source: https://github.com/WarmUpTill/SceneSwitcher.git
     source-type: git
+    source-tag: '1.35.1'
     plugin: cmake
     build-snaps:
       - obs-studio/latest/stable
