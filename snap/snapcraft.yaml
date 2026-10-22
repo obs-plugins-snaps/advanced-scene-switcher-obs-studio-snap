@@ -25,14 +25,10 @@ contact: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio
 issues: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio-snap/issues
 license: GPL-2.0
 
-<<<<<<< before updating
-grade: stable
-=======
 
 icon: snap/gui/icon.png
 
-grade: devel
->>>>>>> after updating
+grade: stable
 confinement: strict
 
 platforms:
