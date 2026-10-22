@@ -1,5 +1,7 @@
 # Advanced Scene Switcher Snap for OBS Studio
 
+[![advanced-scene-switcher-obs-studio](https://snapcraft.io/advanced-scene-switcher-obs-studio/badge.svg)](https://snapcraft.io/advanced-scene-switcher-obs-studio)
+
 This snap delivers [advanced-scene-switcher](https://github.com/WarmUpTill/SceneSwitcher) to the
 [OBS Studio snap](https://snapcraft.io/obs-studio).
 

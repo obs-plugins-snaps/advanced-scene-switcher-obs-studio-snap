@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_commit: v0.0.14
+_commit: v0.0.17
 _src_path: https://github.com/obs-plugins-snaps/template.git
 description: Advanced Scene Switcher is a plugin for OBS Studio that offers automatic
     scene switching based on various conditions including application focus, audio
