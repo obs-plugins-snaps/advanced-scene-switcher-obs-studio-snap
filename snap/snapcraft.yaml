@@ -1,6 +1,6 @@
 name: advanced-scene-switcher-obs-studio
 base: core24
-adopt-info: scene-switcher
+adopt-info: advanced-scene-switcher
 title: Advanced Scene Switcher (OBS plugin)
 summary: "Automatically switch OBS Studio scenes based on various conditions"
 description: |
@@ -47,7 +47,7 @@ parts:
       mkdir -p ${CRAFT_PART_INSTALL}/snap/hooks/
       echo -e '#!/bin/bash\nsnapctl set :obs-plugins snapname='"${CRAFT_PROJECT_NAME}" > ${CRAFT_PART_INSTALL}/snap/hooks/prepare-slot-obs-plugins
 
-  scene-switcher:
+  advanced-scene-switcher:
     after:
       - prepare-hook
     source: https://github.com/WarmUpTill/SceneSwitcher.git
