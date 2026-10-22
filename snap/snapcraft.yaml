@@ -27,7 +27,7 @@ contact: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio
 issues: https://github.com/obs-plugins-snaps/advanced-scene-switcher-obs-studio-snap
 license: GPL-2.0
 
-grade: devel
+grade: stable
 confinement: strict
 
 platforms:
