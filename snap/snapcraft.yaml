@@ -1,6 +1,10 @@
 name: advanced-scene-switcher-obs-studio
 base: core24
+<<<<<<< before updating
 version: '1.35.1'
+=======
+adopt-info: advanced-scene-switcher
+>>>>>>> after updating
 title: Advanced Scene Switcher (OBS plugin)
 summary: "Automatically switch OBS Studio scenes based on various conditions"
 description: |
@@ -52,6 +56,17 @@ parts:
       - prepare-hook
     source: https://github.com/WarmUpTill/SceneSwitcher.git
     source-type: git
+    # TEMPLATE-FROZEN: the source_tag answer seeds this pin at bootstrap
+    # only. Afterwards this line is hand-owned - bump it by editing here
+    # directly - and copier updates keep hand edits as long as the
+    # template never modifies this line.
+    source-tag: '0.1.0'
+    # The snap version is adopted from the tagged source tree (see the
+    # top-level adopt-info), so the packaged bits and the store
+    # metadata always agree.
+    override-pull: |
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v\([0-9]\)/\1/')"
     plugin: cmake
     build-snaps:
       - obs-studio/latest/stable
