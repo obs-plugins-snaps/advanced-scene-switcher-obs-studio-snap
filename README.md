@@ -1,4 +1,4 @@
-# Advanced Scene Switcher (OBS plugin) Snap for OBS Studio
+# Advanced Scene Switcher Snap for OBS Studio
 
 This snap delivers [advanced-scene-switcher](https://github.com/WarmUpTill/SceneSwitcher) to the
 [OBS Studio snap](https://snapcraft.io/obs-studio).
