@@ -6,6 +6,6 @@ description: Advanced Scene Switcher is a plugin for OBS Studio that offers auto
     volume, time, file content, and much more.
 license: GPL-2.0
 plugin_name: advanced-scene-switcher
-source_tag: 0.1.0
+source_tag: 1.35.1
 source_url: https://github.com/WarmUpTill/SceneSwitcher.git
 summary: Automatically switch OBS Studio scenes based on various conditions
